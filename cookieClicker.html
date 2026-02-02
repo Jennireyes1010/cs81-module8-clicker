@@ -39,3 +39,29 @@
 <div id="counter">Clicks: 0</div>
 
 <div id="message">Start clicking the cookie!</div>
+
+ <script>
+        const button = document.getElementById("cookieBtn");
+    const counterDisplay = document.getElementById("counter");
+    const messageDisplay = document.getElementById("message");
+    let clicks = 0;
+     button.addEventListener("click", function () {
+      clicks++;
+      counterDisplay.textContent = "Clicks: " + clicks;
+      if (clicks === 10) {
+        messageDisplay.textContent = "Keep going, you’re doing great! 🍪";
+        document.body.style.backgroundColor = "#dff0d8";
+      } else if (clicks === 25) {
+        messageDisplay.textContent = "So many cookies! 😋";
+        document.body.style.backgroundColor = "#d9edf7";
+      } else if (clicks === 50) {
+        messageDisplay.textContent = "Good job! Halfway there! 🍪";
+        document.body.style.backgroundColor = "#fcf8e3";
+      } else if (clicks === 100) {
+        messageDisplay.textContent = "🎉 You win! Give that finger a break!🎉";
+        document.body.style.backgroundColor = "#f2dede";
+        button.textContent = "🏆";
+      }
+    });
+  </script>
+</body>
